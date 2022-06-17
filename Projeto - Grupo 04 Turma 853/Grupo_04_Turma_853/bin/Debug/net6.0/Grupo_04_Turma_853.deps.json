@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Grupo_04_Turma_853/1.0.0": {
+        "runtime": {
+          "Grupo_04_Turma_853.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Grupo_04_Turma_853/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
