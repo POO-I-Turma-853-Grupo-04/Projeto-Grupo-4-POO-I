@@ -10,7 +10,7 @@ namespace Grupo_04_Turma_853
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Olá!");
         }
     }
 }
