@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grupo_04_Turma_853
 {
-    public class Emprestimo
+    public class TestaEmprestimo
     {
         static void Main(string[] args)
         {
