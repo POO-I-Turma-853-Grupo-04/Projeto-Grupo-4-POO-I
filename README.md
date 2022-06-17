@@ -8,7 +8,7 @@ Projeto de um simulador de empréstimo.
 
 Diagrama UML disponível em: https://app.diagrams.net/#G1E8E7aAq8NhngZuvtxMTNAuN726aCIZsV
 
-Colaboradores:
+## Colaboradores:
 - Beatriz Tavernaro: https://github.com/beatavernaro
 - Fabio Yamashita: https://github.com/fabioyamashita
 - Felipe Ferreira de Andrade: 
