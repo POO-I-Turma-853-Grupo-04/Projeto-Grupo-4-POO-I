@@ -11,4 +11,4 @@ Diagrama UML disponível em: https://app.diagrams.net/#G1E8E7aAq8NhngZuvtxMTNAuN
 ## Colaboradores:
 - Beatriz Tavernaro: https://github.com/beatavernaro
 - Fabio Yamashita: https://github.com/fabioyamashita
-- Felipe Ferreira de Andrade: 
+- Felipe Ferreira de Andrade: https://github.com/felipefand
