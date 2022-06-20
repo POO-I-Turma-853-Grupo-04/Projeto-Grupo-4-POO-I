@@ -1,6 +1,6 @@
-﻿using static EmprestimoTopCoders.Auxiliar;
+﻿using static Grupo_04_Turma_853.Auxiliar;
 
-namespace EmprestimoTopCoders
+namespace Grupo_04_Turma_853
 {
     public static class Auxiliar
     {
@@ -18,6 +18,16 @@ namespace EmprestimoTopCoders
             Funcionario func = new Funcionario($"{nome} {sobrenome}", cpf, telefone, salario);
 
             return func;
+        }
+        public static Cliente CriaCliente()
+        {
+            Cliente cliente = new Cliente();
+            Random rnd = new Random();
+            cliente.ValidaNome($"{DATABASE_NOMES[rnd.Next(0, DATABASE_NOMES.Length)]} {DATABASE_SOBRENOMES[rnd.Next(0, DATABASE_SOBRENOMES.Length)]}");
+            cliente.ValidaCPF(CriaNumerosAleatorios(11));
+            cliente.ValidaTelefone("1199" + CriaNumerosAleatorios(7));
+
+            return cliente;
         }
         public static int CriaScore()
         {

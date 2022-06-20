@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace EmprestimoTopCoders
+namespace Grupo_04_Turma_853
 {
     public class Pessoa
     {
@@ -11,7 +11,7 @@ namespace EmprestimoTopCoders
         public bool ValidaNome(string nome)
         {
             nome = nome.Trim();
-            
+
             Regex rgx = new Regex("[^A-Za-z ]");
             if (rgx.IsMatch(nome) || nome.Split(' ').Length == 1)
                 return false;
@@ -34,7 +34,7 @@ namespace EmprestimoTopCoders
         public bool ValidaTelefone(string telefone)
         {
             telefone = telefone.Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "").Replace(",", "");
-            
+
             if (!Double.TryParse(telefone, out _) || telefone.Length != 11) // FIX: Todos os estados tem 11 dígitos?
                 return false;
 
