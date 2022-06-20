@@ -11,9 +11,9 @@
 O projeto foi uma atividade final do módulo de POO I (Programação Orientada a Objetos I | C#) do Grupo 04 da Turma 853 | Web Full Stack da Let's Code.
 
 O grupo 04 foi composto por: 
-- Beatriz Tavernaro: https://www.linkedin.com/in/beatriz-tavernaro/ | https://github.com/beatavernaro
-- Fabio Yamashita: https://www.linkedin.com/in/fabioksyamashita/ | https://github.com/fabioyamashita
-- Felipe Ferreira de Andrade: https://www.linkedin.com/in/felipe-fandrade/ | https://github.com/felipefand
+- Beatriz Tavernaro: https://www.linkedin.com/in/beatriz-tavernaro | https://github.com/beatavernaro
+- Fabio Yamashita: https://www.linkedin.com/in/fabioksyamashita | https://github.com/fabioyamashita
+- Felipe Ferreira de Andrade: https://www.linkedin.com/in/felipe-fandrade | https://github.com/felipefand
 
 # Objetivo
 
