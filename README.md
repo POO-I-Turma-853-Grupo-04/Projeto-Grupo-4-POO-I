@@ -1,7 +1,7 @@
 # Conteúdo
-[Introdução](#Introdução)  
-[Objetivo](#Objetivo)  
-[Detalhamento do projeto](#Detalhamento-do-projeto)  
+1. [Introdução](#Introdução)  
+2. [Objetivo](#Objetivo)  
+3. [Detalhamento do projeto](#Detalhamento-do-projeto)  
   - [Como ele funciona](##Como-ele-funciona)  
   - [Diagrama UML](##Diagrama-UML)  
   - [Organização das tarefas](##Organização-das-tarefas)  
