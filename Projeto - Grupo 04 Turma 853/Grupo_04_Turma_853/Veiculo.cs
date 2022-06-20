@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using static EmprestimoTopCoders.Auxiliar;
+using static Grupo_04_Turma_853.Auxiliar;
 
 namespace Grupo_04_Turma_853
 {
@@ -48,11 +48,11 @@ namespace Grupo_04_Turma_853
 
             return false;
         }
-        public void ImprimirDados()
+        public override void ImprimirDados()
         {
-            Console.WriteLine("Dados do veículo: ");
-            Console.WriteLine($"Placa: {this.Placa}");
             Console.WriteLine($"Modelo: {CapitalizaString(this.Modelo)}");
+            Console.WriteLine($"Placa: {this.Placa}");
+            
         }
     }
 }

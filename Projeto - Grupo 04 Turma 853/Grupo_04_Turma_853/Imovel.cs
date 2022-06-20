@@ -20,10 +20,9 @@ namespace Grupo_04_Turma_853
             this.cep = cep;
             return true;
         }
-        public void ImprimirDados()
+        public override void ImprimirDados()
         {
-            Console.WriteLine("Dados do Endereço:");
-            Console.WriteLine($"{endereco}, CEP: {this.cep?.Substring(0,5)}-{this.cep?.Substring(5,3)}");
+            Console.WriteLine($"Endereço: {endereco}, CEP: {this.cep?.Substring(0,5)}-{this.cep?.Substring(5,3)}");
         }    
     }
 }
