@@ -30,6 +30,12 @@ A aplicação terá as seguintes etapas:
 1. O usuário entrará com os seus dados pessoais
    * CPF
 
+Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
+
+## Descrição das classes
+
+Colocar o detalhe de cada classe aqui.
+
 ## Diagrama UML
 
 Construímos um diagrama UML para representar nossas classes do projeto e como elas estão relacionadas entre si. Utilizamos a plataforma do [Flowchart Maker & Online Diagram Software](https://app.diagrams.net/).
