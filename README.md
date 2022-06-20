@@ -1,11 +1,16 @@
+# Conteúdo
+[Introdução](#Introdução)  
+[Objetivo](#Objetivo)
+[Detalhamento do projeto](#Detalhamento do projeto)
+[Como ele funciona](##Como ele funciona)
+[Diagrama UML](##Diagrama UML)
+[Organização das tarefas](##Organização das tarefas)
+
 # Introdução
 
 O projeto foi uma atividade final do módulo de POO I (Programação Orientada a Objetos I | C#) do Grupo 04 da Turma 853 | Web Full Stack da Let's Code.
 
 O grupo 04 foi composto por [Beatriz Tavernaro](https://github.com/beatavernaro), [Fabio Yamashita](https://github.com/fabioyamashita) e [Felipe Ferreira de Andrade](https://github.com/felipefand).
-
-[Introdução](#Introdução)  
-[Objetivo](#Objetivo)  
 
 # Objetivo
 
