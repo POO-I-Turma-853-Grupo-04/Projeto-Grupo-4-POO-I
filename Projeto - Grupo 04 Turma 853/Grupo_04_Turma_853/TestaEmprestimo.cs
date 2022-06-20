@@ -25,7 +25,7 @@ namespace Grupo_04_Turma_853
                 Console.Clear();
 
                 if (escolha == "0") break;
-            
+
                 if (escolha == sis.senha)
                     sis.ModoDesenvolvedor();
                 else if (escolha == "1")
@@ -51,7 +51,7 @@ namespace Grupo_04_Turma_853
                             break;
                         }
                     }
-                    
+
                     while (true)
                     {
                         string cpf = Console.ReadLine();
@@ -84,7 +84,125 @@ namespace Grupo_04_Turma_853
                     if (confirma.ToLower() != "sim") continue;
 
                     Console.WriteLine("Você digitou Sim!");
+
                     // PROCEDE PARA AS INFORMAÇÕES DO EMPRÉSTIMO
+
+                    // VALIDAR O SCORE DO USUÁRIO
+
+                    // DEPOIS DE VALIDADO O SCORE, ARMAZENAR INFORMAÇÕES DE GARANTIA
+                    #region "GARANTIA"
+                    Console.Clear();
+                    Console.WriteLine($"\nCerto, {cliente.nome}! Muito obrigado pelas informações.");
+                    Console.WriteLine("\nAgora precisamos saber qual é o tipo da sua garantia.");
+
+                    Garantia garantia = new Garantia();
+                    Veiculo veiculo = new Veiculo();
+                    Imovel imovel = new Imovel();
+
+                    while (true)
+                    {
+                        #region "Escolha do tipo da Garantia"
+                        while (true)
+                        {
+                            Console.WriteLine("\n-- Garantias disponíveis --");
+                            garantia.ImprimeListaTipos();
+                            Console.Write("\nDigite uma das opções acima: ");
+
+                            string garantiaEscolhida = Console.ReadLine();
+
+                            if (!garantia.ValidaTipo(garantiaEscolhida))
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"Por favor, escolha uma opção válida!");
+                            }
+                            else
+                                break;
+                        }
+                        #endregion
+
+                        #region "Escolha do valor da Garantia"
+                        Console.Clear();
+                        Console.WriteLine($"\nÓtimo! Agora, precisamos saber o valor do seu {garantia.Tipo[garantia.CodigoTipo - 1].ToLower()}.");
+
+                        while (true)
+                        {
+                            Console.Write($"\nValor do {garantia.Tipo[garantia.CodigoTipo - 1]}: R$ ");
+                            string valorDigitadoGarantia = Console.ReadLine();
+
+                            if (!garantia.ValidaValor(valorDigitadoGarantia))
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Por favor, digite um valor válido!");
+                            }
+                            else
+                                break;
+                        }
+                        #endregion
+
+                        #region "Armazenando as informações do Veículo"
+                        if (garantia.CodigoTipo == 1)
+                        {
+                            Console.WriteLine("\nDigite o modelo:");
+                            string modeloDigitado = Console.ReadLine();
+                            veiculo.Modelo = modeloDigitado; // depois adicionar um método para armazenar no objeto
+
+                            while (true)
+                            {
+                                Console.WriteLine("\nDigite a placa:");
+                                string placaDigitada = Console.ReadLine();
+
+                                if (!veiculo.ValidaPlaca(placaDigitada))
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"{placaDigitada} não é uma placa válida! Por favor, tente de novo.");
+                                }
+                                else
+                                    break;
+                            }
+                            Console.Clear();
+                            garantia.ImprimirDados();
+                            veiculo.ImprimirDados();
+                        }
+                        #endregion
+
+                        #region "Armazenando as informações do Imóvel"
+                        else if (garantia.CodigoTipo == 2)
+                        {
+                            Console.WriteLine("\nDigite o endereço:");
+                            string enderecoDigitado = Console.ReadLine();
+                            imovel.endereco = enderecoDigitado; // depois adicionar um método para armazenar no objeto
+
+                            while (true)
+                            {
+                                Console.WriteLine("\nDigite o CEP:");
+                                string cepDigitado = Console.ReadLine();
+
+                                if (!imovel.ValidaCEP(cepDigitado))
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"{cepDigitado} não é um CEP válido! Por favor, tente de novo.");
+                                }
+                                else
+                                    break;
+                            }
+                            Console.Clear();
+                            garantia.ImprimirDados();
+                            imovel.ImprimirDados();
+                        }
+                        #endregion
+
+                        #region "Confirmando dados da Garantia"
+                        Console.WriteLine("\nVocê confirma esses dados? (Sim/Não)");
+
+                        string confirmaGarantia = Console.ReadLine();
+                        Console.Clear();
+
+                        if (confirmaGarantia.ToLower() == "sim") break;
+                        #endregion
+                    }
+                    #endregion
+
+                    // CÁLCULOS DO EMPRÉSTIMO
                 }
             }
         }

@@ -12,8 +12,9 @@ namespace Grupo_04_Turma_853
         // Assim, na main, podemos colocar opções para o usuário escolher
         // Não precisaríamos fazer uma validação nesse caso :) (Só a validação da escolha)
         // Depois teríamos um if.. que escolheria quais informações pediríamos: Imovel ou Veiculo
-        public string[] Tipo { get; private set; } = { "Veículo", "Imóvel" };
-        public decimal Valor { get; private set; }
+        public string[] Tipo { get; set; } = { "Veículo", "Imóvel" };
+        public decimal Valor { get; set; }
+        public int CodigoTipo { get; set; }
 
         public void ImprimeListaTipos()
         {
@@ -27,17 +28,17 @@ namespace Grupo_04_Turma_853
         {
             int codigoGarantia;
 
-            if(!int.TryParse(codigoDigitado, out codigoGarantia) || codigoGarantia < 1 || codigoGarantia > Tipo.Length)
+            if (!int.TryParse(codigoDigitado, out codigoGarantia) || codigoGarantia < 1 || codigoGarantia > Tipo.Length)
             {
                 return false;
             }
+            CodigoTipo = codigoGarantia;
             return true;
         }
 
         public bool ValidaValor(string valorDigitado)
         {
             decimal valorGarantia;
-
             if (!decimal.TryParse(valorDigitado, out valorGarantia) || valorGarantia < 0)
             {
                 return false;
@@ -45,6 +46,13 @@ namespace Grupo_04_Turma_853
 
             this.Valor = valorGarantia;
             return true;
+        }
+
+        public virtual void ImprimirDados()
+        {
+            Console.WriteLine($"\n-- Dados da Garantia --");
+            Console.WriteLine($"Tipo: {Tipo[CodigoTipo - 1]}");
+            Console.WriteLine($"Valor: R$ {Valor.ToString("N2")}");
         }
     }
 }
