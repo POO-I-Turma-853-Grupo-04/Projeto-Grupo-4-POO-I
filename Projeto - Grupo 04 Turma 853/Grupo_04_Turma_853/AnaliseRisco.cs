@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace teste
+namespace Grupo_04_Turma_853
 {
     public class AnaliseRisco
     {
-        public int score;
-        public decimal valorGarantia;
+        public Cliente cliente;
+        public Garantia garantia;
         private decimal valorMaximoEmprestimo;
         private decimal valorMinimoEmprestimo;
         private decimal porcentagemScore;
 
-        public AnaliseRisco(int score, decimal valorGarantia)
+        public AnaliseRisco(Cliente cliente, Garantia garantia)
         {
-            this.score = score;
-            this.valorGarantia = valorGarantia;
+            this.score = cliente.score;
+            this.garantia = garantia.Valor;
 
             if (score <= 300)
             {
