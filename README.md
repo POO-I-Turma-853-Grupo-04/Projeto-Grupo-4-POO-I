@@ -2,9 +2,9 @@
 - [Introdução](#Introdução)  
 - [Objetivo](#Objetivo)  
 - [Detalhamento do projeto](#Detalhamento-do-projeto)  
-    - [Como ele funciona](##como-ele-funciona)  
-    - [Diagrama UML](##diagrama-UML)  
-    - [Organização das tarefas](##organização-das-tarefas)  
+    - [Como ele funciona](#como-ele-funciona)  
+    - [Diagrama UML](#diagrama-UML)  
+    - [Organização das tarefas](#organização-das-tarefas)  
 
 # Introdução
 
