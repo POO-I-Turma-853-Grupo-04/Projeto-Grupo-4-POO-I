@@ -83,9 +83,13 @@ namespace Grupo_04_Turma_853
 
                     string confirma = Console.ReadLine();
 
-                    if (confirma.ToLower() != "sim") continue;
+                    if (confirma.ToLower() != "sim") continue;          
 
-                    Console.WriteLine("Você digitou Sim!");
+                    if (!sis.AdicionaCliente(cliente))
+                    {
+                        Console.WriteLine($"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!");
+                        continue;
+                    }
 
                     // PROCEDE PARA AS INFORMAÇÕES DO EMPRÉSTIMO
 
