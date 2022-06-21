@@ -27,8 +27,25 @@ Neste projeto, criamos uma aplicação que faz uma simulação de empréstimo pa
 ## Como ele funciona
 
 A aplicação terá as seguintes etapas:
-1. O usuário entrará com os seus dados pessoais
-   * CPF
+1. O cliente poderá escolher dentre as seguintes opções:
+    - Consultar Taxas
+    - Iniciar processo de empréstimo
+    - Sair do Sistema
+2. Assim que entrar no sistema de empréstimo, pediremos algumas informações pessoais (Obs.: Todas com validações de entrada)
+    - Nome completo
+    - CPF
+    - Telefone (com DDD)
+3. Confirmação dos dados acima
+4. Confirmando, pediremos os dados sobre a garantia do cliente (Obs.: Todas com validações de entrada)
+     - Qual o tipo de Garantia (Veículo ou imóvel)
+     - Valor da garantia
+     - Para Veículos:
+        - Modelo
+        - Placa
+     - Para Imóveis
+        - CEP
+        - Endereço
+5. Confirmação dos dados acima
 
 Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
 
