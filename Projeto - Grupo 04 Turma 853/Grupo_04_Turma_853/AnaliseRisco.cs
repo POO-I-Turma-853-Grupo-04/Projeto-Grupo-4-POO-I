@@ -10,18 +10,20 @@ namespace Grupo_04_Turma_853
     {
         public Cliente cliente;
         public Garantia garantia;
-        private decimal valorMaximoEmprestimo;
-        private decimal valorMinimoEmprestimo;
-        private decimal porcentagemScore;
+        public decimal valorMaximoEmprestimo;
+        public decimal valorMinimoEmprestimo;
+        public decimal porcentagemScore;
+        public int score;
+        public decimal valorGarantia;
 
         public AnaliseRisco(Cliente cliente, Garantia garantia)
         {
             this.score = cliente.score;
-            this.garantia = garantia.Valor;
+            this.valorGarantia = garantia.Valor;
 
             if (score <= 300)
             {
-                Console.WriteLine("Emprestimo não concedido.");
+                Console.WriteLine("Emprestimo não concedido. Score abaixo do ideal");
             }
             else if (score >= 301 && score <= 500)
             {

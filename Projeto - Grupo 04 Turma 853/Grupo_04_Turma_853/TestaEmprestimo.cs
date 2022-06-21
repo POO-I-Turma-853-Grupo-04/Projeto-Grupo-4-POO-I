@@ -64,6 +64,8 @@ namespace Grupo_04_Turma_853
                             break;
                         }
                     }
+                    //INSTANCIAR AQUI A ANALISE DE RISCO
+                    //PARA BARRAR CASO O SCORE SEJA INVALIDO
 
                     while (true)
                     {
