@@ -27,6 +27,7 @@ Neste projeto, criamos uma aplicação que faz uma simulação de empréstimo pa
 ## Como ele funciona
 
 ### A Aplicação
+
 A aplicação terá as seguintes etapas:
 1. O cliente poderá escolher dentre as seguintes opções:
     - Consultar Taxas
@@ -54,11 +55,12 @@ A aplicação terá as seguintes etapas:
 10. Por fim, será pedido uma confirmação de assinatura para o usuário.
 
 ### Por trás da aplicação
-Descrever tudo que acontece por trás? Classes Sistema, criadores de funcionários...
+
+Em breve...
 
 ## Descrição das classes
 
-Colocar o detalhe de cada classe aqui.
+Em breve...
 
 ## Diagrama UML
 
