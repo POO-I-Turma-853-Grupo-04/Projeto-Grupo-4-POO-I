@@ -47,8 +47,11 @@ A aplicação terá as seguintes etapas:
         - CEP | 10456120 (8 dígitos)
         - Endereço
 5. Confirmação dos dados acima
-
-Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
+6. Mostraremos os valores mínimos e máximos de empréstimo possíveis. O usuário digitará um valor.
+7. As opções de parcelamento serão mostradas na tela. O usuário digitará uma parcela desejada.
+8. Confirmação da contratação do empréstimo
+9. Caso positivo, o contrato final será gerado.
+10. Por fim, será pedido uma confirmação de assinatura para o usuário.
 
 ### Por trás da aplicação
 Descrever tudo que acontece por trás? Classes Sistema, criadores de funcionários...
