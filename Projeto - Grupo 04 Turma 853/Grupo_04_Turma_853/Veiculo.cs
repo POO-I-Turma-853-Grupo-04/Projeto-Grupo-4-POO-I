@@ -12,7 +12,8 @@ namespace Grupo_04_Turma_853
     {
         public string? Placa { get; set; }
         public string? Modelo { get; set; }
-        public List<byte> numParcelaAuto = new List<byte> { 18, 24, 30, 36 };
+        public int[] numParcelaAuto = new int[] { 18, 24, 30, 36 };
+    
 
         public bool ValidaPlaca(string placaDigitada)
         {

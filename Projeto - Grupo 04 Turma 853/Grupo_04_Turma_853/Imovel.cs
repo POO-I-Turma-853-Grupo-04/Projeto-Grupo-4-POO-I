@@ -10,8 +10,7 @@ namespace Grupo_04_Turma_853
     {
         public string? endereco;
         public string? cep;
-        public List<byte> numParcelaImovel = new List<byte> { 60, 90, 120, 150 };
-
+        public int[] numParcelaImovel = new int[] { 60, 90, 120, 150 };
         public bool ValidaCEP(string cep)
         {
             if (cep.Length != 8 || !long.TryParse(cep, out _))
