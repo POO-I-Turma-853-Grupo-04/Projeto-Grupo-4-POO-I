@@ -33,17 +33,17 @@ A aplicação terá as seguintes etapas:
     - Sair do Sistema
 2. Assim que entrar no sistema de empréstimo, pediremos algumas informações pessoais (Obs.: Todas com validações de entrada)
     - Nome completo
-    - CPF
-    - Telefone (com DDD)
+    - CPF | 55555555592 (11 dígitos) ou 555.555.555-92
+    - Telefone (com DDD) (11954536582)
 3. Confirmação dos dados acima
 4. Confirmando, pediremos os dados sobre a garantia do cliente (Obs.: Todas com validações de entrada)
      - Qual o tipo de Garantia (Veículo ou imóvel)
      - Valor da garantia
      - Para Veículos:
         - Modelo
-        - Placa
+        - Placa | FDS-1512 ou BRA5G52
      - Para Imóveis
-        - CEP
+        - CEP | 10456120 (8 dígitos)
         - Endereço
 5. Confirmação dos dados acima
 
