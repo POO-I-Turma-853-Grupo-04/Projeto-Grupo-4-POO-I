@@ -51,6 +51,7 @@ A aplicação terá as seguintes etapas:
 Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
 
 ### Por trás da aplicação
+Descrever tudo que acontece por trás? Classes Sistema, criadores de funcionários...
 
 ## Descrição das classes
 
