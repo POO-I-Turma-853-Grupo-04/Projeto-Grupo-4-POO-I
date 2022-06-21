@@ -26,6 +26,7 @@ Neste projeto, criamos uma aplicação que faz uma simulação de empréstimo pa
 
 ## Como ele funciona
 
+### A Aplicação
 A aplicação terá as seguintes etapas:
 1. O cliente poderá escolher dentre as seguintes opções:
     - Consultar Taxas
@@ -48,6 +49,8 @@ A aplicação terá as seguintes etapas:
 5. Confirmação dos dados acima
 
 Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
+
+### Por trás da aplicação
 
 ## Descrição das classes
 
