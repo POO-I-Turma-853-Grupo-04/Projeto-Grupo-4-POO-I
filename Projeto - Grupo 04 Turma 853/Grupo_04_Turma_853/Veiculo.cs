@@ -13,7 +13,6 @@ namespace Grupo_04_Turma_853
         public string? Placa { get; set; }
         public string? Modelo { get; set; }
         public int[] numParcelaAuto = new int[] { 18, 24, 30, 36 };
-    
 
         public bool ValidaPlaca(string placaDigitada)
         {
@@ -21,39 +20,38 @@ namespace Grupo_04_Turma_853
             // Antiga: FDS-1515
             // Nova: BRA4G45
 
-            Regex rgxNotLetraNumero = new Regex("[^A-Z0-9]");
-            Regex rgxNotLetra = new Regex("[^A-Z]");
-            Regex rgxNotNumero = new Regex("[^0-9]");
+            string placa = placaDigitada.Replace("-", "").Trim().ToUpper();
 
-            string placa = placaDigitada.Trim().Replace("-", "").ToUpper();
+            bool placaAntiga = true;
+            bool placaNova = true;
 
             if (placa.Length != 7)
                 return false;
 
-            bool primeiraParteValida = !rgxNotLetra.IsMatch(placa.Substring(0, 3));
-            bool segundaParteValidaPlacaAntiga = !rgxNotNumero.IsMatch(placa.Substring(3, 4));
-            bool segundaParteValidaPlacaNova = !rgxNotNumero.IsMatch(placa.Substring(3, 1)) && !rgxNotLetra.IsMatch(placa.Substring(4, 1)) && !rgxNotNumero.IsMatch(placa.Substring(5, 2));
+            if (placa.Substring(0, 3).Any(c => !char.IsLetter(c)) || placa.Substring(3, 4).Any(c => !char.IsDigit(c)))
+                placaAntiga = false;
 
-            if (primeiraParteValida && (segundaParteValidaPlacaAntiga || segundaParteValidaPlacaNova))
+            if (placa.Substring(0, 3).Any(c => !char.IsLetter(c)) || placa.Substring(5, 2).Any(c => !char.IsDigit(c)) || !char.IsDigit(placa[3]) || !char.IsLetter(placa[4]))
+                placaNova = false;
+
+            if (!placaNova && !placaAntiga)
+                return false;
+
+            if (!char.IsLetter(placa[4]))
             {
-                if (!rgxNotNumero.IsMatch(placa.Substring(4, 1)))
-                {
-                    Placa = placa.Substring(0, 3) + "-" + placa.Substring(3, 4);
-                }
-                else
-                {
-                    Placa = placa;
-                }
-                return true;
+                Placa = placa.Substring(0, 3) + "-" + placa.Substring(3, 4);
             }
-
-            return false;
+            else
+            {
+                Placa = placa;
+            }
+            return true;
         }
         public override void ImprimirDados()
         {
-            Console.WriteLine($"Modelo: {CapitalizaString(this.Modelo)}");
-            Console.WriteLine($"Placa: {this.Placa}");
-            
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " Modelo", " " + CapitalizaString(this.Modelo)));
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " Placa", " " + this.Placa));
+            Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
         }
     }
 }

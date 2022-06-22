@@ -84,10 +84,10 @@ namespace Grupo_04_Turma_853
             }
         }
 
-        public void CriaContrato(Cliente cliente, Funcionario funcionario) // Recebe também Empréstimo e Garantia
+        public void CriaContrato(Cliente cliente, Funcionario funcionario, DateTime dataContrato, Emprestimo emprestimo, Garantia garantia, Veiculo veiculo, Imovel imovel) // Recebe também Empréstimo e Garantia
         {
             int id = contratos.Count + 1;
-            Contrato contrato = new Contrato(id, cliente, funcionario, DateTime.Now);
+            Contrato contrato = new Contrato(id, cliente, funcionario, DateTime.Now, emprestimo, garantia, veiculo, imovel);
             contratos.Add(contrato);
         }
 

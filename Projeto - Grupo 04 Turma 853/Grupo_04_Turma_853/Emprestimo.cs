@@ -19,7 +19,7 @@ namespace Grupo_04_Turma_853
         public double parcelaSelecionada; //numero de parcelas que o cliente escolheu
         public double valorParcela;
         public double valorTotalDivida;
-        public double valorEmprestado = 100000;
+        public double valorEmprestado;
         public double jurosMensal;
         public double totalJuros;
         public double aux1;
@@ -28,7 +28,10 @@ namespace Grupo_04_Turma_853
         {
             this.valorMaximo = analiseRisco.valorMaximoEmprestimo;
             this.valorMinimo = analiseRisco.valorMinimoEmprestimo;
-            
+
+            // Adicionei para a classe Emprestimo conseguir puxar o valor da AnaliseRisco na hora do construtor
+            this.valorEmprestado = (double)analiseRisco.valorEmprestado; 
+
             if (garantia.CodigoTipo == 1)
             {
                 this.numParcela = new int[] { 18, 24, 30, 36 };
@@ -45,14 +48,14 @@ namespace Grupo_04_Turma_853
         {
             foreach (double num in numParcela)
             {
-                CalculaValorParcela(18); //passar aqui parametro NUMERO DE PARCELAS
+                CalculaValorParcela(num); //passar aqui parametro NUMERO DE PARCELAS
                 Console.WriteLine($"{num} vezes de {this.valorParcela.ToString("C")}");
             }
         }
 
         public void CalculaValorParcela(double numParcela) //passar aqui o numero de parcelas escolhidas
         {
-            this.aux1 = Math.Pow((1 + this.jurosMensal), this.parcelaSelecionada);
+            this.aux1 = Math.Pow((1 + this.jurosMensal), numParcela);
 
             this.valorParcela = this.valorEmprestado * ((aux1 * this.jurosMensal) / (aux1 - 1));
             //Console.WriteLine("valor parcela: " + this.valorParcela.ToString("C"));
@@ -79,9 +82,6 @@ namespace Grupo_04_Turma_853
             Console.WriteLine($"Valor total da divida: {this.valorTotalDivida}");
 
             this.CalculaTotalJuros();
-            Console.WriteLine($"Valor total dos juros: {this.totalJuros}");
-        }
-
-        
+            Console.WriteLine($"Valor total dos juros: {this.totalJuros}");        }
     }
 }

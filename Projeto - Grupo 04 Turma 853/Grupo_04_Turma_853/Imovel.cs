@@ -21,7 +21,9 @@ namespace Grupo_04_Turma_853
         }
         public override void ImprimirDados()
         {
-            Console.WriteLine($"Endereço: {endereco}, CEP: {this.cep?.Substring(0,5)}-{this.cep?.Substring(5,3)}");
-        }    
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " Endereço", " " + endereco));
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " CEP", " " + this.cep?.Substring(0, 5) + "-" + this.cep?.Substring(5, 3)));
+            Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
+        }
     }
 }
