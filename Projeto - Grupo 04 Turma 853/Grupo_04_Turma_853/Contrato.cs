@@ -36,7 +36,7 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-72}|", "  " + CapitalizaString(cliente.nome)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", " CPF", " Telefone"));
-            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + cliente.cpf, "  " + cliente.telefone));
+            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + cliente.cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-"), "  " + cliente.telefone));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------   DADOS DA GARANTIA    ------------------------"));
             Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", " Tipo", " Valor"));
@@ -74,7 +74,7 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-72}|", "  " + CapitalizaString(funcionario.nome)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", " CPF", " Telefone"));
-            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + funcionario.cpf, "  " + funcionario.telefone));
+            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + funcionario.cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-"), "  " + funcionario.telefone));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "---------------------------   ASSINATURAS    ---------------------------"));
