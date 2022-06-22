@@ -147,6 +147,7 @@ namespace Grupo_04_Turma_853
                     if (!sis.AdicionaCliente(cliente))
                     {
                         Console.WriteLine($"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!");
+                        Console.ReadKey();
                         continue;
                     }
 
