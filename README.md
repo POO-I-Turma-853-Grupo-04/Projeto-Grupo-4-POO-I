@@ -60,7 +60,7 @@ Para os cálculos de empréstimo, consideramos as seguintes taxas de juros para 
     - Veículo: 1,49% a.m.
     - Imóvel: 0,99% a.m.
 
-Para calcular o valor final da dívida, utilizamos a seguinte fórmula:
+Para calcular o valor final da dívida, utilizamos a seguinte fórmula:  
 
 ![\dpi{110}\bg{white}P&space;=&space;PV&space;*&space;\frac&space;{(i&space;&plus;&space;1)^{n}&space;*&space;i}{(i&space;&plus;&space;1)^{n}&space;-&space;i}](https://latex.codecogs.com/png.image?\dpi{110}\bg{white}P&space;=&space;PV&space;*&space;\frac&space;{(i&space;&plus;&space;1)^{n}&space;*&space;i}{(i&space;&plus;&space;1)^{n}&space;-&space;i}) 
 
