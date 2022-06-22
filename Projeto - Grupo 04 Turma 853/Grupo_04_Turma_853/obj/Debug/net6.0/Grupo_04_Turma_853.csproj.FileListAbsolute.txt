@@ -13,3 +13,18 @@ C:\Users\yamas\Documents\C#\Curso-Completo-Lets-Code-Safra\Módulo 2 - POO I - P
 C:\Users\yamas\Documents\C#\Curso-Completo-Lets-Code-Safra\Módulo 2 - POO I - Projeto Final\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.pdb
 C:\Users\yamas\Documents\C#\Curso-Completo-Lets-Code-Safra\Módulo 2 - POO I - Projeto Final\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.genruntimeconfig.cache
 C:\Users\yamas\Documents\C#\Curso-Completo-Lets-Code-Safra\Módulo 2 - POO I - Projeto Final\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\ref\Grupo_04_Turma_853.dll
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.csproj.AssemblyReference.cache
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.AssemblyInfoInputs.cache
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.AssemblyInfo.cs
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.csproj.CoreCompileInputs.cache
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.dll
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\refint\Grupo_04_Turma_853.dll
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.pdb
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\bin\Debug\net6.0\Grupo_04_Turma_853.exe
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\bin\Debug\net6.0\Grupo_04_Turma_853.deps.json
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\bin\Debug\net6.0\Grupo_04_Turma_853.runtimeconfig.json
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\bin\Debug\net6.0\Grupo_04_Turma_853.dll
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\bin\Debug\net6.0\Grupo_04_Turma_853.pdb
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\Grupo_04_Turma_853.genruntimeconfig.cache
+C:\Users\Bea\Documents\Codigos\BackEnd\Projeto-Grupo-4-POO-I\Projeto - Grupo 04 Turma 853\Grupo_04_Turma_853\obj\Debug\net6.0\ref\Grupo_04_Turma_853.dll

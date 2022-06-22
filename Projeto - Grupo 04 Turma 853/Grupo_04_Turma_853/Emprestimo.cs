@@ -45,7 +45,7 @@ namespace Grupo_04_Turma_853
         {
             foreach (double num in numParcela)
             {
-                CalculaValorParcela(); //passar aqui parametro NUMERO DE PARCELAS
+                CalculaValorParcela(18); //passar aqui parametro NUMERO DE PARCELAS
                 Console.WriteLine($"{num} vezes de {this.valorParcela.ToString("C")}");
             }
         }
@@ -81,5 +81,7 @@ namespace Grupo_04_Turma_853
             this.CalculaTotalJuros();
             Console.WriteLine($"Valor total dos juros: {this.totalJuros}");
         }
+
+        
     }
 }

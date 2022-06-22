@@ -3,7 +3,7 @@
     public class Cliente : Pessoa
     {
         public int score;
-
+                
         public void ImprimirDados()
         {
             string cpfTratado = cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-");
