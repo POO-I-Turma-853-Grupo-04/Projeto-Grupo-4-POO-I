@@ -17,6 +17,7 @@ namespace Grupo_04_Turma_853
             Console.WriteLine("|------- Empréstimo Top Coders -------|");
             Console.WriteLine("|-------------------------------------|");
         }
+
         public void ImprimeTabelaTaxasEmprestimo()
         {
             Console.WriteLine(String.Format("\n|{0,16}|", "---------------------------"));
@@ -58,7 +59,6 @@ namespace Grupo_04_Turma_853
 
                 Console.Write("\n  Digite um opção: ");
                 string escolha = Console.ReadLine();
-
                 Console.Clear();
 
                 if (escolha == "0")
@@ -66,7 +66,6 @@ namespace Grupo_04_Turma_853
 
                 if (escolha == sis.senha)
                     sis.ModoDesenvolvedor();
-
                 else if (escolha == "1")
                 {
                     telasConsole.ImprimeCabecalho();
@@ -76,7 +75,6 @@ namespace Grupo_04_Turma_853
                     Console.ReadKey();
                     Console.Clear();
                 }
-
                 else if (escolha == "2")
                 {
                     Funcionario funcionario = sis.AtribuiFuncionario();
@@ -93,12 +91,16 @@ namespace Grupo_04_Turma_853
                         if (!cliente.ValidaNome(nome))
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine($"\nMe desculpe, {nome} não é um nome válido, por favor, digite novamente nome e sobrenome.");
+                            Console.WriteLine(
+                                $"\nMe desculpe, {nome} não é um nome válido, por favor, digite novamente nome e sobrenome."
+                            );
                         }
                         else
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine($"\nPrazer te conhecer {CapitalizaString(cliente.nome.Split()[0])}! Você pode digitar agora seu CPF?");
+                            Console.WriteLine(
+                                $"\nPrazer te conhecer {CapitalizaString(cliente.nome.Split()[0])}! Você pode digitar agora seu CPF?"
+                            );
                             break;
                         }
                     }
@@ -111,17 +113,19 @@ namespace Grupo_04_Turma_853
                         if (!cliente.ValidaCPF(cpf))
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine($"\nMe desculpe, {cpf} não é um CPF válido, por favor, tente novamente.");
-
+                            Console.WriteLine(
+                                $"\nMe desculpe, {cpf} não é um CPF válido, por favor, tente novamente."
+                            );
                         }
                         else
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine($"\nPerfeito! Pode digitar agora seu telefone com DDD para contato?");
+                            Console.WriteLine(
+                                $"\nPerfeito! Pode digitar agora seu telefone com DDD para contato?"
+                            );
                             break;
                         }
                     }
-
                     while (true)
                     {
                         Console.Write("Telefone: ");
@@ -130,7 +134,9 @@ namespace Grupo_04_Turma_853
                         if (!cliente.ValidaTelefone(telefone))
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine($"\nMe desculpe, {telefone} não é um telefone válido, por favor, tente novamente.");
+                            Console.WriteLine(
+                                $"\nMe desculpe, {telefone} não é um telefone válido, por favor, tente novamente."
+                            );
                         }
                         else
                             break;
@@ -142,11 +148,14 @@ namespace Grupo_04_Turma_853
 
                     string confirma = Console.ReadLine();
 
-                    if (confirma.ToLower() != "sim") continue;
+                    if (confirma.ToLower() != "sim")
+                        continue;
 
                     if (!sis.AdicionaCliente(cliente))
                     {
-                        Console.WriteLine($"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!");
+                        Console.WriteLine(
+                            $"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!"
+                        );
                         Console.ReadKey();
                         continue;
                     }
@@ -169,7 +178,9 @@ namespace Grupo_04_Turma_853
 
                     #region "GARANTIA"
                     telasConsole.ImprimeCabecalho();
-                    Console.WriteLine($"\nCerto, {CapitalizaString(cliente.nome.Split()[0])}! Muito obrigado pelas informações.");
+                    Console.WriteLine(
+                        $"\nCerto, {CapitalizaString(cliente.nome.Split()[0])}! Muito obrigado pelas informações."
+                    );
                     Console.WriteLine("\nAgora precisamos saber qual é o tipo da sua garantia.");
 
                     Garantia garantia = new Garantia();
@@ -198,11 +209,15 @@ namespace Grupo_04_Turma_853
 
                         #region "Escolha do valor da Garantia"
                         telasConsole.ImprimeCabecalho();
-                        Console.WriteLine($"\nÓtimo! Agora, precisamos saber o valor do seu {garantia.Tipo[garantia.CodigoTipo - 1].ToLower()}.");
+                        Console.WriteLine(
+                            $"\nÓtimo! Agora, precisamos saber o valor do seu {garantia.Tipo[garantia.CodigoTipo - 1].ToLower()}."
+                        );
 
                         while (true)
                         {
-                            Console.Write($"\nValor do {garantia.Tipo[garantia.CodigoTipo - 1]}: R$ ");
+                            Console.Write(
+                                $"\nValor do {garantia.Tipo[garantia.CodigoTipo - 1]}: R$ "
+                            );
                             string valorDigitadoGarantia = Console.ReadLine();
 
                             if (!garantia.ValidaValor(valorDigitadoGarantia))
@@ -219,7 +234,9 @@ namespace Grupo_04_Turma_853
                         if (garantia.CodigoTipo == 1)
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine("\nCerto! Precisamos saber algumas informações do seu Veículo.");
+                            Console.WriteLine(
+                                "\nCerto! Precisamos saber algumas informações do seu Veículo."
+                            );
                             Console.Write("\nDigite o modelo: ");
                             string modeloDigitado = Console.ReadLine();
                             veiculo.Modelo = modeloDigitado; // depois adicionar um método para armazenar no objeto
@@ -233,14 +250,15 @@ namespace Grupo_04_Turma_853
                                 {
                                     Console.Clear();
                                     telasConsole.ImprimeCabecalho();
-                                    Console.WriteLine($"\n{placaDigitada} não é uma placa válida! Por favor, tente de novo.");
+                                    Console.WriteLine(
+                                        $"\n{placaDigitada} não é uma placa válida! Por favor, tente de novo."
+                                    );
                                     Console.WriteLine($"\nModelo: {veiculo.Modelo}");
                                 }
                                 else
                                     break;
                             }
                             Console.Clear();
-
                             garantia.ImprimirDados();
                             veiculo.ImprimirDados();
                         }
@@ -250,7 +268,9 @@ namespace Grupo_04_Turma_853
                         else if (garantia.CodigoTipo == 2)
                         {
                             telasConsole.ImprimeCabecalho();
-                            Console.WriteLine("\nCerto! Precisamos saber algumas informações do seu endereço.");
+                            Console.WriteLine(
+                                "\nCerto! Precisamos saber algumas informações do seu endereço."
+                            );
 
                             while (true)
                             {
@@ -260,7 +280,9 @@ namespace Grupo_04_Turma_853
                                 if (!imovel.ValidaCEP(cepDigitado))
                                 {
                                     telasConsole.ImprimeCabecalho();
-                                    Console.WriteLine($"\n{cepDigitado} não é um CEP válido! Por favor, tente de novo.");
+                                    Console.WriteLine(
+                                        $"\n{cepDigitado} não é um CEP válido! Por favor, tente de novo."
+                                    );
                                 }
                                 else
                                     break;
@@ -285,7 +307,8 @@ namespace Grupo_04_Turma_853
                         string confirmaGarantia = Console.ReadLine();
                         Console.Clear();
 
-                        if (confirmaGarantia.ToLower() == "sim") break;
+                        if (confirmaGarantia.ToLower() == "sim")
+                            break;
 
                         telasConsole.ImprimeCabecalho();
                         #endregion
@@ -298,18 +321,55 @@ namespace Grupo_04_Turma_853
                     bool validaValor;
                     do
                     {
-                        Console.WriteLine(String.Format("\n|{0,48}|", "-------------------------------------------------"));
-                        Console.WriteLine(String.Format("|{0,48}|", "-------- VALORES DISPONÍVEIS DE EMPRÉSTIMO ------"));
-                        Console.WriteLine(String.Format("|{0,48}|", "-------------------------------------------------"));
-                        Console.WriteLine(String.Format("|{0,-16}|{1,-32}|", " Valor Mínimo", " R$ " + analise.valorMinimoEmprestimo.ToString("N2")));
-                        Console.WriteLine(String.Format("|{0,-16}|{1,-32}|", " Valor Máximo", " R$ " + analise.valorMaximoEmprestimo.ToString("N2")));
-                        Console.WriteLine(String.Format("|{0,48}|", "-------------------------------------------------"));
+                        Console.WriteLine(
+                            String.Format(
+                                "\n|{0,48}|",
+                                "-------------------------------------------------"
+                            )
+                        );
+                        Console.WriteLine(
+                            String.Format(
+                                "|{0,48}|",
+                                "-------- VALORES DISPONÍVEIS DE EMPRÉSTIMO ------"
+                            )
+                        );
+                        Console.WriteLine(
+                            String.Format(
+                                "|{0,48}|",
+                                "-------------------------------------------------"
+                            )
+                        );
+                        Console.WriteLine(
+                            String.Format(
+                                "|{0,-16}|{1,-32}|",
+                                " Valor Mínimo",
+                                " R$ " + analise.valorMinimoEmprestimo.ToString("N2")
+                            )
+                        );
+                        Console.WriteLine(
+                            String.Format(
+                                "|{0,-16}|{1,-32}|",
+                                " Valor Máximo",
+                                " R$ " + analise.valorMaximoEmprestimo.ToString("N2")
+                            )
+                        );
+                        Console.WriteLine(
+                            String.Format(
+                                "|{0,48}|",
+                                "-------------------------------------------------"
+                            )
+                        );
 
-                        Console.WriteLine($"\nVerifiquei aqui no sistema o valor máximo que posso te disponibilizar para empréstimo é {analise.valorMaximoEmprestimo.ToString("C")}.");
+                        Console.WriteLine(
+                            $"\nVerifiquei aqui no sistema o valor máximo que posso te disponibilizar para empréstimo é {analise.valorMaximoEmprestimo.ToString("C")}."
+                        );
                         Console.WriteLine("\nQual valor você gostaria de emprestar? ");
                         Console.Write("R$: ");
 
-                        validaValor = decimal.TryParse(Console.ReadLine(), out analise.valorEmprestado);
+                        validaValor = decimal.TryParse(
+                            Console.ReadLine(),
+                            out analise.valorEmprestado
+                        );
 
                         if (analise.valorEmprestado > analise.valorMaximoEmprestimo)
                         {
@@ -321,7 +381,9 @@ namespace Grupo_04_Turma_853
                         {
                             telasConsole.ImprimeCabecalho();
                             Console.WriteLine("\nValor menor que o permitido!");
-                            Console.WriteLine($"O valor mínimo permitido é {analise.valorMinimoEmprestimo.ToString("C")}");
+                            Console.WriteLine(
+                                $"O valor mínimo permitido é {analise.valorMinimoEmprestimo.ToString("C")}"
+                            );
                             validaValor = false;
                         }
                     } while (validaValor == false);
@@ -330,7 +392,32 @@ namespace Grupo_04_Turma_853
                     #endregion
 
                     #region "ESCOLHENDO AS CONDIÇÕES DO EMPRÉSTIMO"
-                    // Coloque aqui as condições :)
+                    
+                    double parcelaEscolhida = 0;
+                    validaValor = true;
+                    do
+                    {
+                        Console.WriteLine("Encontramos quatro ofertas para você! ");
+                        emprestimo.ImprimeParcelas();
+
+                        Console.WriteLine("Em quantas parcelas você prefere?");
+                        validaValor = double.TryParse(Console.ReadLine(), out parcelaEscolhida);
+                        
+
+                        if (!Array.Exists(emprestimo.numParcela,element => element == parcelaEscolhida) || parcelaEscolhida == 0)
+                        {
+                            Console.WriteLine("Número de parcelas inválido! ");
+                            Console.Clear();
+                            validaValor = false;
+                        }
+                        else
+                        {
+                            validaValor = true;
+                            emprestimo.CalculaValorParcela(parcelaEscolhida);
+                            emprestimo.CalculaTotalDivida();
+                            emprestimo.CalculaTotalJuros();
+                        }
+                    } while (validaValor == false);
 
 
                     #endregion
@@ -347,7 +434,15 @@ namespace Grupo_04_Turma_853
 
                     Console.Clear();
 
-                    sis.CriaContrato(cliente, funcionario, DateTime.Today, emprestimo, garantia, veiculo, imovel);
+                    sis.CriaContrato(
+                        cliente,
+                        funcionario,
+                        DateTime.Today,
+                        emprestimo,
+                        garantia,
+                        veiculo,
+                        imovel
+                    );
 
                     Console.WriteLine("\n [1] Assinar Contrato      [2] Cancelar Contrato");
                     while (true)
