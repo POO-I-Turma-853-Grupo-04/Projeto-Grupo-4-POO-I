@@ -54,10 +54,17 @@ namespace Grupo_04_Turma_853
             return funcionarios[rnd.Next(0, funcionarios.Count)];
         }
 
-        public void AdicionaCliente(Cliente cliente)
+        public bool AdicionaCliente(Cliente cliente)
         {
+            foreach(Cliente c in clientes)
+            {
+                if (cliente.cpf == c.cpf)
+                    return false;
+            }
+
             cliente.score = CriaScore();
             clientes.Add(cliente);
+            return true;
         }
         
         public void ListaCliente()

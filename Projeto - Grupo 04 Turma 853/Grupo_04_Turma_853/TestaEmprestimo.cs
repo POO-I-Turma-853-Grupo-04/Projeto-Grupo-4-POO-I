@@ -93,10 +93,18 @@ namespace Grupo_04_Turma_853
 
                     string confirma = Console.ReadLine();
 
+<<<<<<< HEAD
                     if (confirma.ToLower() != "sim")
                         continue;
+=======
+                    if (confirma.ToLower() != "sim") continue;          
+>>>>>>> 08f59056609e707c0ca6793f6502db1c3d50528c
 
-                    Console.WriteLine("Você digitou Sim!");
+                    if (!sis.AdicionaCliente(cliente))
+                    {
+                        Console.WriteLine($"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!");
+                        continue;
+                    }
 
                     AnaliseRisco analise = new AnaliseRisco(cliente);
                     if (analise.score <= 300)
