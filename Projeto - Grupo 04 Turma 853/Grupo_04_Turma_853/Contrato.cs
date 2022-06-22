@@ -12,6 +12,7 @@ namespace Grupo_04_Turma_853
         public Garantia garantia;
         public Veiculo veiculo;
         public Imovel imovel;
+        public bool contratoAssinado;
 
         public Contrato(int id, Cliente cliente, Funcionario funcionario, DateTime dataContrato, Emprestimo emprestimo, Garantia garantia, Veiculo veiculo, Imovel imovel)
         {
@@ -36,11 +37,11 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-72}|", "  " + CapitalizaString(cliente.nome)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", " CPF", " Telefone"));
-            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + cliente.cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-"), "  " + cliente.telefone));
+            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + TratarCPF(cliente.cpf), "  " + TratarTelefone(cliente.telefone)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------   DADOS DA GARANTIA    ------------------------"));
             Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", " Tipo", " Valor"));
-            Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + garantia.Tipo[garantia.CodigoTipo - 1], "  R$ " + garantia.Valor.ToString("N2")));
+            Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + garantia.Tipo[garantia.CodigoTipo - 1], garantia.Valor.ToString("C")));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
 
             if (garantia.CodigoTipo == 1)
@@ -59,10 +60,10 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,72}|", "--------------------   INFORMAÇÕES DO EMPRÉSTIMO    --------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", " Valor Contratado", " Condição de Pagamento"));
-            Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", "  " + emprestimo.valorEmprestado.ToString("N2"), "  " + emprestimo.parcelaSelecionada + " parcelas de" + " R$ " + emprestimo.valorParcela.ToString("N2")));
+            Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", "  " + emprestimo.valorEmprestado.ToString("C"), "  " + emprestimo.parcelaSelecionada + " parcelas de " + emprestimo.valorParcela.ToString("C")));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", " Juros a pagar", " Valor Total da Dívida"));
-            Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", "  " + emprestimo.totalJuros.ToString("N2"), "  " + emprestimo.valorTotalDivida.ToString("N2")));
+            Console.WriteLine(String.Format("|{0,-25}|{1,-46}|", "  " + emprestimo.totalJuros.ToString("C"), "  " + emprestimo.valorTotalDivida.ToString("C")));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", ""));
             Console.WriteLine(String.Format("|{0,-72}|", "  Eu estou ciente dos valores e condições do contrato."));
@@ -74,18 +75,26 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-72}|", "  " + CapitalizaString(funcionario.nome)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", " CPF", " Telefone"));
-            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + funcionario.cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-"), "  " + funcionario.telefone));
+            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + TratarCPF(funcionario.cpf), "  " + TratarTelefone(funcionario.telefone)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "---------------------------   ASSINATURAS    ---------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", " Contratante", " Responsável da Let's Bank"));
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + CapitalizaString(cliente.nome), "  " + CapitalizaString(funcionario.nome)));
-            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  Ass.: ", "  Ass.: "));
+            Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  Ass.: " + (contratoAssinado == true ? "ASSINADO DIGITALMENTE" : ""), "  Ass.: " + (contratoAssinado == true ? funcionario.nome : "")));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-72}|", " Local e Data"));
             Console.WriteLine(String.Format("|{0,-72}|", "  São Paulo, " + dataContrato.ToString("dd 'de' MMMM 'de' yyyy") + "."));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
+        }
+
+        public void AssinarContrato()
+        {
+            funcionario.Bonificar((decimal)emprestimo.valorEmprestado);
+            contratoAssinado = true;
+            this.cliente.contrato = this;
+            funcionario.contratos.Add(this);
         }
     }
 }

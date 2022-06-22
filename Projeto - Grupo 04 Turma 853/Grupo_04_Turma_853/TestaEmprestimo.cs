@@ -434,15 +434,7 @@ namespace Grupo_04_Turma_853
 
                     Console.Clear();
 
-                    sis.CriaContrato(
-                        cliente,
-                        funcionario,
-                        DateTime.Today,
-                        emprestimo,
-                        garantia,
-                        veiculo,
-                        imovel
-                    );
+                    Contrato contrato = sis.CriaContrato(cliente, funcionario, DateTime.Today, emprestimo, garantia, veiculo, imovel);
 
                     Console.WriteLine("\n [1] Assinar Contrato      [2] Cancelar Contrato");
                     while (true)
@@ -457,6 +449,7 @@ namespace Grupo_04_Turma_853
 
                         if (opcaoEscolhida == "1")
                         {
+                            contrato.AssinarContrato();
                             Console.WriteLine("\n |-------------------------------------|");
                             Console.WriteLine(" |--------- CONTRATO ASSINADO ---------|");
                             Console.WriteLine(" |-------------------------------------|");

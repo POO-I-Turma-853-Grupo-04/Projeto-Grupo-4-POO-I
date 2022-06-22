@@ -79,6 +79,16 @@ namespace Grupo_04_Turma_853
 
             return string.Join(" ", palavraTratada);
         }
+
+        public static string TratarTelefone(string telefone)
+        {
+            return telefone.Insert(0, "(").Insert(3, ")").Insert(4, " ").Insert(10, "-");
+        }
+
+        public static string TratarCPF(string cpf)
+        {
+            return cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-");
+        }
     }
 }
 
