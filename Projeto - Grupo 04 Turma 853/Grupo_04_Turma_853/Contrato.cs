@@ -40,8 +40,9 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-36}|{1,-35}|", "  " + TratarCPF(cliente.cpf), "  " + TratarTelefone(cliente.telefone)));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------   DADOS DA GARANTIA    ------------------------"));
+            Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", " Tipo", " Valor"));
-            Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + garantia.Tipo[garantia.CodigoTipo - 1], garantia.Valor.ToString("C")));
+            Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + garantia.Tipo[garantia.CodigoTipo - 1],"  " + garantia.Valor.ToString("C")));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
 
             if (garantia.CodigoTipo == 1)

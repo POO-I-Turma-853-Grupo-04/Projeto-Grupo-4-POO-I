@@ -49,7 +49,8 @@ namespace Grupo_04_Turma_853
             foreach (double num in numParcela)
             {
                 CalculaValorParcela(num); //passar aqui parametro NUMERO DE PARCELAS
-                Console.WriteLine($"{num} vezes de {this.valorParcela.ToString("C")}");
+                //Console.WriteLine($"{num} vezes de {this.valorParcela.ToString("C")}");
+                Console.WriteLine(String.Format("|{0,-37}|", " - " + num + " vezes de " + this.valorParcela.ToString("C")));
             }
         }
 
@@ -77,12 +78,17 @@ namespace Grupo_04_Turma_853
         public void ImprimeEmprestimo()
         {
             this.CalculaValorParcela(this.parcelaSelecionada);
-            Console.WriteLine($"Valor da parcela: {this.valorParcela}");
+            //Console.WriteLine($"Valor da parcela: {this.valorParcela}");
+            Console.WriteLine(String.Format("|{0,-40}|", " Valor da parcela: R$ " + this.valorParcela.ToString("N2")));
 
             this.CalculaTotalDivida();
-            Console.WriteLine($"Valor total da divida: {this.valorTotalDivida}");
+            //Console.WriteLine($"Valor total da divida: {this.valorTotalDivida}");
+            Console.WriteLine(String.Format("|{0,-40}|", " Valor total da dívida: R$ " + this.valorTotalDivida.ToString("N2")));
 
             this.CalculaTotalJuros();
-            Console.WriteLine($"Valor total dos juros: {this.totalJuros}");        }
+            //Console.WriteLine($"Valor total dos juros: {this.totalJuros}");
+            Console.WriteLine(String.Format("|{0,-40}|", " Valor total dos juros: R$ " + this.totalJuros.ToString("N2")));
+
+        }
     }
 }

@@ -321,50 +321,16 @@ namespace Grupo_04_Turma_853
                     bool validaValor;
                     do
                     {
-                        Console.WriteLine(
-                            String.Format(
-                                "\n|{0,48}|",
-                                "-------------------------------------------------"
-                            )
-                        );
-                        Console.WriteLine(
-                            String.Format(
-                                "|{0,48}|",
-                                "-------- VALORES DISPONÍVEIS DE EMPRÉSTIMO ------"
-                            )
-                        );
-                        Console.WriteLine(
-                            String.Format(
-                                "|{0,48}|",
-                                "-------------------------------------------------"
-                            )
-                        );
-                        Console.WriteLine(
-                            String.Format(
-                                "|{0,-16}|{1,-32}|",
-                                " Valor Mínimo",
-                                " R$ " + analise.valorMinimoEmprestimo.ToString("N2")
-                            )
-                        );
-                        Console.WriteLine(
-                            String.Format(
-                                "|{0,-16}|{1,-32}|",
-                                " Valor Máximo",
-                                " R$ " + analise.valorMaximoEmprestimo.ToString("N2")
-                            )
-                        );
-                        Console.WriteLine(
-                            String.Format(
-                                "|{0,48}|",
-                                "-------------------------------------------------"
-                            )
-                        );
+                        Console.WriteLine(String.Format("\n|{0,48}|", "-------------------------------------------------"));
+                        Console.WriteLine(String.Format("|{0,48}|","-------- VALORES DISPONÍVEIS DE EMPRÉSTIMO ------"));
+                        Console.WriteLine(String.Format("|{0,48}|","-------------------------------------------------"));
+                        Console.WriteLine(String.Format("|{0,-16}|{1,-32}|"," Valor Mínimo"," R$ " + analise.valorMinimoEmprestimo.ToString("N2")));
+                        Console.WriteLine(String.Format("|{0,-16}|{1,-32}|"," Valor Máximo"," R$ " + analise.valorMaximoEmprestimo.ToString("N2")));
+                        Console.WriteLine(String.Format("|{0,48}|","-------------------------------------------------"));
 
-                        Console.WriteLine(
-                            $"\nVerifiquei aqui no sistema o valor máximo que posso te disponibilizar para empréstimo é {analise.valorMaximoEmprestimo.ToString("C")}."
-                        );
+                        Console.WriteLine($"\nVerifiquei aqui no sistema o valor máximo que posso te disponibilizar para empréstimo é {analise.valorMaximoEmprestimo.ToString("C")}.");
                         Console.WriteLine("\nQual valor você gostaria de emprestar? ");
-                        Console.Write("R$: ");
+                        Console.Write("R$ ");
 
                         validaValor = decimal.TryParse(
                             Console.ReadLine(),
@@ -392,22 +358,30 @@ namespace Grupo_04_Turma_853
                     #endregion
 
                     #region "ESCOLHENDO AS CONDIÇÕES DO EMPRÉSTIMO"
-                    
                     double parcelaEscolhida = 0;
                     validaValor = true;
+
+                    telasConsole.ImprimeCabecalho();
+
                     do
                     {
-                        Console.WriteLine("Encontramos quatro ofertas para você! ");
+                        Console.WriteLine("\nEncontramos quatro ofertas para você! ");
+
+                        Console.WriteLine(String.Format("\n|{0,37}|", "-------------------------------------"));
+                        Console.WriteLine(String.Format("|{0,37}|", "------- VEJA AS NOSSAS OFERTAS ------"));
+                        Console.WriteLine(String.Format("|{0,37}|", "-------------------------------------"));
+                        Console.WriteLine(String.Format("|{0,-37}|", " Empréstimo: R$ " + emprestimo.valorEmprestado.ToString("N2")));
+                        Console.WriteLine(String.Format("|{0,37}|", "-------------------------------------"));
                         emprestimo.ImprimeParcelas();
+                        Console.WriteLine(String.Format("|{0,37}|", "-------------------------------------"));
 
-                        Console.WriteLine("Em quantas parcelas você prefere?");
+                        Console.Write("\nEm quantas parcelas você prefere? ");
                         validaValor = double.TryParse(Console.ReadLine(), out parcelaEscolhida);
-                        
 
-                        if (!Array.Exists(emprestimo.numParcela,element => element == parcelaEscolhida) || parcelaEscolhida == 0)
+                        if (!Array.Exists(emprestimo.numParcela, element => element == parcelaEscolhida) || parcelaEscolhida == 0)
                         {
-                            Console.WriteLine("Número de parcelas inválido! ");
-                            Console.Clear();
+                            telasConsole.ImprimeCabecalho();
+                            Console.WriteLine($"\nNúmero de parcelas inválido! Não é possível escolher {parcelaEscolhida} parcelas.");
                             validaValor = false;
                         }
                         else
@@ -418,8 +392,6 @@ namespace Grupo_04_Turma_853
                             emprestimo.CalculaTotalJuros();
                         }
                     } while (validaValor == false);
-
-
                     #endregion
 
                     #region "Contrato"
