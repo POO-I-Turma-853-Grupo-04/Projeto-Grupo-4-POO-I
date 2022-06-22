@@ -335,8 +335,20 @@ namespace Grupo_04_Turma_853
                     #endregion
 
                     #region "Contrato"
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.Clear();
+                        Console.Write("Gerando Contrato");
+                        Console.Write(" ");
+                        Console.Write("...");
+                        Thread.Sleep(millisecondsTimeout: 600);
+                    }
+
+                    Console.Clear();
+
                     sis.CriaContrato(cliente, funcionario, DateTime.Today, emprestimo, garantia, veiculo, imovel);
 
+                    Console.WriteLine("\n [1] Assinar Contrato      [2] Cancelar Contrato");
                     while (true)
                     {
                         Console.Write("\n Digite a sua opção: ");

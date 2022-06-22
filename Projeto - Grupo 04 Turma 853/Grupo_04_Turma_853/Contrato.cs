@@ -23,23 +23,10 @@ namespace Grupo_04_Turma_853
             this.garantia = garantia;
             this.veiculo = veiculo;
             this.imovel = imovel;
-
-            ImprimirContrato();
         }
 
         public void ImprimirContrato()
         {
-            for (int i = 0; i < 4; i++)
-            {
-                Console.Clear();
-                Console.Write("Gerando Contrato");
-                Console.Write(" ");
-                Console.Write("...");
-                Thread.Sleep(millisecondsTimeout: 600);
-            }
-
-            Console.Clear();
-
             Console.WriteLine(String.Format("\n|{0,72}|", "------------------------------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "---------------------    CONTRATO DE EMPRÉSTIMO    ---------------------"));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
@@ -99,8 +86,6 @@ namespace Grupo_04_Turma_853
             Console.WriteLine(String.Format("|{0,-72}|", " Local e Data"));
             Console.WriteLine(String.Format("|{0,-72}|", "  São Paulo, " + dataContrato.ToString("dd 'de' MMMM 'de' yyyy") + "."));
             Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
-
-            Console.WriteLine("\n [1] Assinar Contrato      [2] Cancelar Contrato");
         }
     }
 }

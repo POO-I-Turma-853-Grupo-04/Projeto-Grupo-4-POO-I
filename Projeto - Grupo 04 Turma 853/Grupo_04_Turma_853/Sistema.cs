@@ -89,6 +89,8 @@ namespace Grupo_04_Turma_853
             int id = contratos.Count + 1;
             Contrato contrato = new Contrato(id, cliente, funcionario, DateTime.Now, emprestimo, garantia, veiculo, imovel);
             contratos.Add(contrato);
+
+            contrato.ImprimirContrato();
         }
 
         public void ListaContratos()
@@ -103,9 +105,11 @@ namespace Grupo_04_Turma_853
         {
             foreach (Contrato c in contratos)
             {
-                //if (Convert.ToString(c.id) == id)
-                //c.ImprimirContrato();
+                if (Convert.ToString(c.id) == id)
+                c.ImprimirContrato();
+                Console.WriteLine();
             }
+            Console.ReadKey();
         }
 
         public void ModoDesenvolvedor()
