@@ -12,7 +12,7 @@ namespace Grupo_04_Turma_853
     {
         public void ImprimeCabecalho()
         {
-            // Console.Clear();
+            Console.Clear();
             Console.WriteLine("|-------------------------------------|");
             Console.WriteLine("|------- Empréstimo Top Coders -------|");
             Console.WriteLine("|-------------------------------------|");
@@ -39,7 +39,7 @@ namespace Grupo_04_Turma_853
 
             while (true)
             {
-                //Console.Clear();
+                Console.Clear();
                 Console.WriteLine(" |--------------------------------------|");
                 Console.WriteLine(" |--- Ambiente de Empréstimo Virtual ---|");
                 Console.WriteLine(" |--------------------------------------|");
@@ -59,7 +59,7 @@ namespace Grupo_04_Turma_853
 
                 Console.Write("\n  Digite um opção: ");
                 string escolha = Console.ReadLine();
-                //Console.Clear();
+                Console.Clear();
 
                 if (escolha == "0")
                     break;
@@ -73,7 +73,7 @@ namespace Grupo_04_Turma_853
 
                     Console.Write("\n\nAperte qualquer tecla para voltar.");
                     Console.ReadKey();
-                    //Console.Clear();
+                    Console.Clear();
                 }
                 else if (escolha == "2")
                 {
@@ -163,7 +163,7 @@ namespace Grupo_04_Turma_853
                     AnaliseRisco analise = new AnaliseRisco(cliente);
                     if (analise.score <= 300)
                     {
-                        //Console.Clear();
+                        Console.Clear();
 
                         Console.WriteLine("|-------------------------------------|");
                         Console.WriteLine("|-------------- ATENÇÃO --------------|");
@@ -172,7 +172,7 @@ namespace Grupo_04_Turma_853
                         Console.WriteLine("Score abaixo do permitido.");
 
                         Console.ReadKey();
-                        //Console.Clear();
+                        Console.Clear();
                         continue;
                     }
 
@@ -222,7 +222,7 @@ namespace Grupo_04_Turma_853
 
                             if (!garantia.ValidaValor(valorDigitadoGarantia))
                             {
-                                //Console.Clear();
+                                Console.Clear();
                                 Console.WriteLine("Por favor, digite um valor válido!");
                             }
                             else
@@ -248,7 +248,7 @@ namespace Grupo_04_Turma_853
 
                                 if (!veiculo.ValidaPlaca(placaDigitada))
                                 {
-                                    //Console.Clear();
+                                    Console.Clear();
                                     telasConsole.ImprimeCabecalho();
                                     Console.WriteLine(
                                         $"\n{placaDigitada} não é uma placa válida! Por favor, tente de novo."
@@ -258,7 +258,7 @@ namespace Grupo_04_Turma_853
                                 else
                                     break;
                             }
-                            //Console.Clear();
+                            Console.Clear();
                             garantia.ImprimirDados();
                             veiculo.ImprimirDados();
                         }
@@ -288,13 +288,13 @@ namespace Grupo_04_Turma_853
                                     break;
                             }
 
-                            //Console.Clear();
+                            Console.Clear();
                             telasConsole.ImprimeCabecalho();
                             Console.Write("\nDigite o seu endereço completo: ");
                             string enderecoDigitado = Console.ReadLine();
                             imovel.endereco = enderecoDigitado; // depois adicionar um método para armazenar no objeto
 
-                            //Console.Clear();
+                            Console.Clear();
 
                             garantia.ImprimirDados();
                             imovel.ImprimirDados();
@@ -305,7 +305,7 @@ namespace Grupo_04_Turma_853
                         Console.Write("\nVocê confirma esses dados? (Sim/Não): ");
 
                         string confirmaGarantia = Console.ReadLine();
-                        //Console.Clear();
+                        Console.Clear();
 
                         if (confirmaGarantia.ToLower() == "sim")
                             break;
@@ -392,7 +392,7 @@ namespace Grupo_04_Turma_853
                     #endregion
 
                     #region "ESCOLHENDO AS CONDIÇÕES DO EMPRÉSTIMO"
-                    // Coloque aqui as condições :)
+                    
                     double parcelaEscolhida = 0;
                     validaValor = true;
                     do
@@ -402,12 +402,12 @@ namespace Grupo_04_Turma_853
 
                         Console.WriteLine("Em quantas parcelas você prefere?");
                         validaValor = double.TryParse(Console.ReadLine(), out parcelaEscolhida);
-                        //parcelaEscolhida = double.Parse(Console.ReadLine());
+                        
 
                         if (!Array.Exists(emprestimo.numParcela,element => element == parcelaEscolhida) || parcelaEscolhida == 0)
                         {
                             Console.WriteLine("Número de parcelas inválido! ");
-                            //Console.Clear()
+                            Console.Clear();
                             validaValor = false;
                         }
                         else
@@ -419,30 +419,20 @@ namespace Grupo_04_Turma_853
                         }
                     } while (validaValor == false);
 
-                    //emprestimo.CalculaValorParcela(parcelaEscolhida);
-
-                    /*
-                    string[] match2 = { "25", "36", "94", "20", "12" };
-
-                    string teste = Console.ReadLine();
-
-                    if (Array.Exists(match2, element => element == teste))
-                      Console.WriteLine("Contém!");
-                */
 
                     #endregion
 
                     #region "Contrato"
                     for (int i = 0; i < 4; i++)
                     {
-                        //Console.Clear();
+                        Console.Clear();
                         Console.Write("Gerando Contrato");
                         Console.Write(" ");
                         Console.Write("...");
                         Thread.Sleep(millisecondsTimeout: 600);
                     }
 
-                    //Console.Clear();
+                    Console.Clear();
 
                     sis.CriaContrato(
                         cliente,

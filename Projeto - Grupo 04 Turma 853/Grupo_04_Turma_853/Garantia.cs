@@ -51,7 +51,7 @@ namespace Grupo_04_Turma_853
 
         public virtual void ImprimirDados()
         {
-            //Console.Clear();
+            Console.Clear();
             Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
             Console.WriteLine(String.Format("|{0,52}|", "------------------ DADOS DA GARANTIA ----------------"));
             Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
