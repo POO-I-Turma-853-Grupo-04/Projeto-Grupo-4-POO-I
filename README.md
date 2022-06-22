@@ -57,8 +57,8 @@ A aplicação terá as seguintes etapas:
 ### Por trás da aplicação
 
 Para os cálculos de empréstimo, consideramos as seguintes taxas de juros para cada tipo de garantia dada:
-    - Veículo: 1,49% a.m.
-    - Imóvel: 0,99% a.m.
+- Veículo: 1,49% a.m.
+- Imóvel: 0,99% a.m.
 
 Para calcular o valor final da dívida, utilizamos a seguinte fórmula:  
 
