@@ -258,7 +258,8 @@ namespace Grupo_04_Turma_853
                         }
                     } while (validaValor == false);
 
-                    //Emprestimo emprestimo = new Emprestimo();
+                    Emprestimo emprestimo = new Emprestimo(analise, garantia);
+                    
 
                 }
             }

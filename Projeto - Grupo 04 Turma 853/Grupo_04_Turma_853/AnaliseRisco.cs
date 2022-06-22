@@ -34,7 +34,7 @@ namespace Grupo_04_Turma_853
                 this.porcentagemScore = 1M;
             }
 
-            //this.CalculaValorEmprestimo();
+            
         }
 
         public void CalculaValorEmprestimo(Garantia garantia)
