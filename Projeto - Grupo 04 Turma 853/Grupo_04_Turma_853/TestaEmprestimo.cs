@@ -22,7 +22,7 @@ namespace Grupo_04_Turma_853
                 Console.WriteLine("2 - Iniciar Processo de Empréstimo");
 
                 string escolha = Console.ReadLine();
-                //Console.Clear();
+                Console.Clear();
 
                 if (escolha == "0")
                     break;
@@ -73,9 +73,7 @@ namespace Grupo_04_Turma_853
                             break;
                         }
                     }
-                    //INSTANCIAR AQUI A ANALISE DE RISCO
-                    //PARA BARRAR CASO O SCORE SEJA INVALIDO
-
+                    
                     while (true)
                     {
                         string telefone = Console.ReadLine();
@@ -95,10 +93,13 @@ namespace Grupo_04_Turma_853
 
                     string confirma = Console.ReadLine();
 
-                    if (confirma.ToLower() != "sim")
-                        continue;
+                    if (confirma.ToLower() != "sim") continue;          
 
-                    Console.WriteLine("Você digitou Sim!");
+                    if (!sis.AdicionaCliente(cliente))
+                    {
+                        Console.WriteLine($"{cliente.nome.Split(' ')[0]}, consta aqui que seu CPF já está cadastrado no sistema, vou te retornar para o início!");
+                        continue;
+                    }
 
                     AnaliseRisco analise = new AnaliseRisco(cliente);
                     if (analise.score <= 300)
@@ -114,7 +115,7 @@ namespace Grupo_04_Turma_853
 
                     // DEPOIS DE VALIDADO O SCORE, ARMAZENAR INFORMAÇÕES DE GARANTIA
                     #region "GARANTIA"
-                    //Console.Clear();
+                    Console.Clear();
                     Console.WriteLine(
                         $"\nCerto, {cliente.nome}! Muito obrigado pelas informações."
                     );
@@ -137,7 +138,7 @@ namespace Grupo_04_Turma_853
 
                             if (!garantia.ValidaTipo(garantiaEscolhida))
                             {
-                                //Console.Clear();
+                                Console.Clear();
                                 Console.WriteLine($"Por favor, escolha uma opção válida!");
                             }
                             else
@@ -146,7 +147,7 @@ namespace Grupo_04_Turma_853
                         #endregion
 
                         #region "Escolha do valor da Garantia"
-                        // Console.Clear();
+                        Console.Clear();
                         Console.WriteLine(
                             $"\nÓtimo! Agora, precisamos saber o valor do seu {garantia.Tipo[garantia.CodigoTipo - 1].ToLower()}."
                         );
@@ -160,7 +161,7 @@ namespace Grupo_04_Turma_853
 
                             if (!garantia.ValidaValor(valorDigitadoGarantia))
                             {
-                                // Console.Clear();
+                                Console.Clear();
                                 Console.WriteLine("Por favor, digite um valor válido!");
                             }
                             else
@@ -182,7 +183,7 @@ namespace Grupo_04_Turma_853
 
                                 if (!veiculo.ValidaPlaca(placaDigitada))
                                 {
-                                    // Console.Clear();
+                                    Console.Clear();
                                     Console.WriteLine(
                                         $"{placaDigitada} não é uma placa válida! Por favor, tente de novo."
                                     );
@@ -190,7 +191,7 @@ namespace Grupo_04_Turma_853
                                 else
                                     break;
                             }
-                            // Console.Clear();
+                            Console.Clear();
                             garantia.ImprimirDados();
                             veiculo.ImprimirDados();
                         }
@@ -210,7 +211,7 @@ namespace Grupo_04_Turma_853
 
                                 if (!imovel.ValidaCEP(cepDigitado))
                                 {
-                                    // Console.Clear();
+                                    Console.Clear();
                                     Console.WriteLine(
                                         $"{cepDigitado} não é um CEP válido! Por favor, tente de novo."
                                     );
@@ -218,7 +219,7 @@ namespace Grupo_04_Turma_853
                                 else
                                     break;
                             }
-                            //Console.Clear();
+                            Console.Clear();
                             garantia.ImprimirDados();
                             imovel.ImprimirDados();
                         }
@@ -228,7 +229,7 @@ namespace Grupo_04_Turma_853
                         Console.WriteLine("\nVocê confirma esses dados? (Sim/Não)");
 
                         string confirmaGarantia = Console.ReadLine();
-                        // Console.Clear();
+                        Console.Clear();
 
                         if (confirmaGarantia.ToLower() == "sim")
                             break;
@@ -257,7 +258,7 @@ namespace Grupo_04_Turma_853
                         }
                     } while (validaValor == false);
 
-                    //Emprestimo emprestimo = new Emprestimo();
+                    Emprestimo emprestimo = new Emprestimo(analise, garantia);
 
                 }
             }
