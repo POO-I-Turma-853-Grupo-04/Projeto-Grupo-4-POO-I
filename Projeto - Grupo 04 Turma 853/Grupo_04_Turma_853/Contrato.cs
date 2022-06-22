@@ -59,7 +59,7 @@ namespace Grupo_04_Turma_853
             if (garantia.CodigoTipo == 1)
             {
                 Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", " Placa", " Modelo"));
-                Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + veiculo.Placa, "  " + veiculo.Modelo));
+                Console.WriteLine(String.Format("|{0,-20}|{1,-51}|", "  " + veiculo.Placa, "  " + CapitalizaString(veiculo.Modelo)));
                 Console.WriteLine(String.Format("|{0,72}|", "------------------------------------------------------------------------"));
             }
             else if (garantia.CodigoTipo == 2)
