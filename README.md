@@ -27,6 +27,7 @@ Neste projeto, criamos uma aplicação que faz uma simulação de empréstimo pa
 ## Como ele funciona
 
 ### A Aplicação
+
 A aplicação terá as seguintes etapas:
 1. O cliente poderá escolher dentre as seguintes opções:
     - Consultar Taxas
@@ -47,15 +48,27 @@ A aplicação terá as seguintes etapas:
         - CEP | 10456120 (8 dígitos)
         - Endereço
 5. Confirmação dos dados acima
-
-Colocar o passo a passo do programa. (Colocar a fórmula ou aqui ou na descrição das classes)
+6. Mostraremos os valores mínimos e máximos de empréstimo possíveis. O usuário digitará um valor.
+7. As opções de parcelamento serão mostradas na tela. O usuário digitará uma parcela desejada.
+8. Confirmação da contratação do empréstimo
+9. Caso positivo, o contrato final será gerado.
+10. Por fim, será pedido uma confirmação de assinatura para o usuário.
 
 ### Por trás da aplicação
-Descrever tudo que acontece por trás? Classes Sistema, criadores de funcionários...
+
+Para os cálculos de empréstimo, consideramos as seguintes taxas de juros para cada tipo de garantia dada:
+- Veículo: 1,49% a.m.
+- Imóvel: 0,99% a.m.
+
+Para calcular o valor final da dívida, utilizamos a seguinte fórmula:  
+
+![\dpi{110}\bg{white}P&space;=&space;PV&space;*&space;\frac&space;{(i&space;&plus;&space;1)^{n}&space;*&space;i}{(i&space;&plus;&space;1)^{n}&space;-&space;i}](https://latex.codecogs.com/png.image?\dpi{110}\bg{white}P&space;=&space;PV&space;*&space;\frac&space;{(i&space;&plus;&space;1)^{n}&space;*&space;i}{(i&space;&plus;&space;1)^{n}&space;-&space;i}) 
+
+Mais conteúdos em breve...
 
 ## Descrição das classes
 
-Colocar o detalhe de cada classe aqui.
+Em breve...
 
 ## Diagrama UML
 

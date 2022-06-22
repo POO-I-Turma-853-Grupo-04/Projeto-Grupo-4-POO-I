@@ -8,20 +8,21 @@ namespace Grupo_04_Turma_853
 {
     public class Garantia
     {
-        // Os valores de Tipo podem vir direto da classe sistema, ex.: DATABASE_TIPO = {"Veículo", "Imóvel"}
-        // Assim, na main, podemos colocar opções para o usuário escolher
-        // Não precisaríamos fazer uma validação nesse caso :) (Só a validação da escolha)
-        // Depois teríamos um if.. que escolheria quais informações pediríamos: Imovel ou Veiculo
         public string[] Tipo { get; set; } = { "Veículo", "Imóvel" };
         public decimal Valor { get; set; }
         public int CodigoTipo { get; set; }
 
         public void ImprimeListaTipos()
         {
+            Console.WriteLine(String.Format("\n|{0,28}|", "-----------------------------"));
+            Console.WriteLine(String.Format("|{0,28}|", "--- Garantias disponíveis ---"));
+            Console.WriteLine(String.Format("|{0,28}|", "-----------------------------"));
+
             for (int i = 0; i < Tipo.Length; i++)
             {
-                Console.WriteLine($"[{i + 1}] {Tipo[i]}");
+                Console.WriteLine(String.Format("|{0,-29}|", " [" + (i + 1) + "] " + Tipo[i]));
             }
+            Console.WriteLine(String.Format("|{0,28}|", "-----------------------------"));
         }
 
         public bool ValidaTipo(string codigoDigitado)
@@ -50,9 +51,12 @@ namespace Grupo_04_Turma_853
 
         public virtual void ImprimirDados()
         {
-            Console.WriteLine($"\n-- Dados da Garantia --");
-            Console.WriteLine($"Tipo: {Tipo[CodigoTipo - 1]}");
-            Console.WriteLine($"Valor: R$ {Valor.ToString("N2")}");
+            Console.Clear();
+            Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
+            Console.WriteLine(String.Format("|{0,52}|", "------------------ DADOS DA GARANTIA ----------------"));
+            Console.WriteLine(String.Format("|{0,52}|", "-----------------------------------------------------"));
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " Tipo", " " + Tipo[CodigoTipo - 1]));
+            Console.WriteLine(String.Format("|{0,-10}|{1,-42}|", " Valor", " R$ " + Valor.ToString("N2")));
         }
     }
 }

@@ -54,10 +54,17 @@ namespace Grupo_04_Turma_853
             return funcionarios[rnd.Next(0, funcionarios.Count)];
         }
 
-        public void AdicionaCliente(Cliente cliente)
+        public bool AdicionaCliente(Cliente cliente)
         {
+            foreach(Cliente c in clientes)
+            {
+                if (cliente.cpf == c.cpf)
+                    return false;
+            }
+
             cliente.score = CriaScore();
             clientes.Add(cliente);
+            return true;
         }
         
         public void ListaCliente()
@@ -77,11 +84,13 @@ namespace Grupo_04_Turma_853
             }
         }
 
-        public void CriaContrato(Cliente cliente, Funcionario funcionario) // Recebe também Empréstimo e Garantia
+        public void CriaContrato(Cliente cliente, Funcionario funcionario, DateTime dataContrato, Emprestimo emprestimo, Garantia garantia, Veiculo veiculo, Imovel imovel) // Recebe também Empréstimo e Garantia
         {
             int id = contratos.Count + 1;
-            Contrato contrato = new Contrato(id, cliente, funcionario, DateTime.Now);
+            Contrato contrato = new Contrato(id, cliente, funcionario, DateTime.Now, emprestimo, garantia, veiculo, imovel);
             contratos.Add(contrato);
+
+            contrato.ImprimirContrato();
         }
 
         public void ListaContratos()
@@ -96,9 +105,11 @@ namespace Grupo_04_Turma_853
         {
             foreach (Contrato c in contratos)
             {
-                //if (Convert.ToString(c.id) == id)
-                //c.ImprimirContrato();
+                if (Convert.ToString(c.id) == id)
+                c.ImprimirContrato();
+                Console.WriteLine();
             }
+            Console.ReadKey();
         }
 
         public void ModoDesenvolvedor()
