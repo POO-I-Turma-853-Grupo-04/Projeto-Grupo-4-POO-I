@@ -53,8 +53,9 @@ namespace Grupo_04_Turma_853
             }
         }
 
-        public void CalculaValorParcela(double numParcela) //passar aqui o numero de parcelas escolhidas
+        public void CalculaValorParcela(double numParcela)
         {
+            this.parcelaSelecionada = numParcela;
             this.aux1 = Math.Pow((1 + this.jurosMensal), numParcela);
 
             this.valorParcela = this.valorEmprestado * ((aux1 * this.jurosMensal) / (aux1 - 1));
