@@ -93,12 +93,7 @@ namespace Grupo_04_Turma_853
 
                     string confirma = Console.ReadLine();
 
-<<<<<<< HEAD
-                    if (confirma.ToLower() != "sim")
-                        continue;
-=======
                     if (confirma.ToLower() != "sim") continue;          
->>>>>>> 08f59056609e707c0ca6793f6502db1c3d50528c
 
                     if (!sis.AdicionaCliente(cliente))
                     {
